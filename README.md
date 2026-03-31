@@ -1,10 +1,26 @@
-# IF YOUR COMPUTER GETS INFECTED OR YOU DISTRIBUTE THIS I WILL NO BE RESPONSABLE
+# Socoma - Open Source Malware Library
 
-##   Installing socoma
+**⚠️ VERY IMPORTANT WARNING ⚠️**
+**IF YOUR COMPUTER GETS INFECTED OR YOU DISTRIBUTE THIS I WILL NOT BE RESPONSIBLE. DO NOT USE THIS CODE FOR MALICIOUS PURPOSES.**
 
-  ### 1. Tap on releases on github and tap on the lastest version and download the file that says "Malware.exe"
-  ### 2. Execute it and have fan
+Socoma is a Python library created for educational purposes that simulates a ransomware attack. 
 
-## Can i change its name?
+## Installation of the library
 
- ### At it says on the licence you cant change legally the name socoma for your own name, you can add things and delete things but not the original name or logo.
+You can install this library directly from GitHub using `pip`. Open your terminal and run the following command:
+
+```bash
+pip install git https://github.com/ierikcraft/Socoma-Malware/tree/main/library
+```
+
+## Use of the library
+
+Use this comand on python
+
+```bash
+# Import the function from the library
+from mi_libreria import startsocoma
+
+# Execute the malware
+startsocoma()
+```
