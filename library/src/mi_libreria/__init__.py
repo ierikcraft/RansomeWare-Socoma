@@ -1,0 +1,1 @@
+from .socoma import startsocoma, ver
