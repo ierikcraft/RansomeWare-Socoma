@@ -10,7 +10,7 @@ Socoma is a Python library created for educational purposes that simulates a ran
 You can install this library directly from GitHub using `pip`. Open your terminal and run the following command:
 
 ```bash
-pip install git https://github.com/ierikcraft/Socoma-Malware/tree/main/library
+pip install "git+https://github.com/ierikcraft/Socoma-Malware.git#subdirectory=library"
 ```
 
 ## Use of the library
